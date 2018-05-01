@@ -16,7 +16,7 @@ Graph7 is a free Java class library that provides heuristic graph partitioning a
 
 It runs on Java 2 Platform (requires JDK 1.8 or later).
 
-Graph7 may be used under the terms of either the
+Graph7 can be used under the terms of
 
 * Eclipse Public License (EPL)
    http://www.eclipse.org/org/documents/epl-v10.php
