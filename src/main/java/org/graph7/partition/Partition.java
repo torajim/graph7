@@ -23,6 +23,7 @@ import java.util.Set;
 public class Partition<V, E> {
     private Set<V> vertexSet;
     private Set<E> innerOnlyEdges;
+    private Double innerOnlyEdgesWeightsSum;
     private Set<E> cutEdges;
-    private Double innerWeightsSum;
+    private Double cutEdgesWeightsSum;
 }

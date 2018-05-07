@@ -1,5 +1,10 @@
 package org.graph7.partition;
 
+import org.jgrapht.Graph;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 /**
@@ -9,10 +14,20 @@ import java.util.Set;
  * @author Woohyuk Jang
  * @since May 2, 2018
  */
-@SuppressWarnings("WeakerAccess")
-public interface DeterministicGreedy<V, E>{
+
+@Validated
+public interface DeterministicGreedy<V, E> {
+    void buildPartitionsWithGraph(
+            @NotNull(message="Graph should not be null") Graph<V, E> graph
+            , @Min(value=1, message="Min partition number is 1") int numOfPartitions);
+
     Set<Partition<V, E>> partitionSet();
-    Double getCutWeights();
-    Double getEdgeCutCount();
-    Double getInnerWeightsSum();
+
+    Double getCutEdgesWeightsSum();
+
+    Double getCutEdgesCount();
+
+    Double getInnerOnlyEdgesWeightsSum();
+
+    Double getInnerOnlyEdgesCount();
 }
